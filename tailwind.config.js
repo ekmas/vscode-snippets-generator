@@ -20,7 +20,8 @@ export default {
         lightGray: '#cccccc',
         gray: '#6e6e6e',
         darkGray: '#333333',
-        darkerGray: '#242424'
+        darkerGray: '#242424',
+        editorBg: '#1e1e1e'
       }
     },
   },
