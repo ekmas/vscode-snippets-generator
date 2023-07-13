@@ -2,9 +2,10 @@ import { useState, useCallback } from 'react'
 import SnippetProperty from './SnippetProperty'
 import { Editor } from '@monaco-editor/react'
 import ChangeLanguage from './ChangeLanguage'
+import { Snippet } from '../types'
 
 export default function AddSnippet() {
-  const [snippet, setSnippet] = useState({
+  const [snippet, setSnippet] = useState<Snippet>({
     name: '',
     tabTrigger: '',
     description: '',
