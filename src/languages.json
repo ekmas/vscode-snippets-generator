@@ -1,0 +1,130 @@
+[
+  {
+    "lang": "clojure",
+    "iconClass": "devicon-clojure-line colored"
+  },
+  {
+    "lang": "cpp",
+    "iconClass": "devicon-cplusplus-plain colored"
+  },
+  {
+    "lang": "csharp",
+    "iconClass": "devicon-csharp-plain colored"
+  },
+  {
+    "lang": "css",
+    "iconClass": "devicon-css3-plain colored"
+  },
+  {
+    "lang": "dart",
+    "iconClass": "devicon-dart-plain colored"
+  },
+  {
+    "lang": "dockerfile",
+    "iconClass": "devicon-docker-plain colored"
+  },
+  {
+    "lang": "elixir",
+    "iconClass": "devicon-elixir-plain colored"
+  },
+  {
+    "lang": "fsharp",
+    "iconClass": "devicon-fsharp-plain colored"
+  },
+  {
+    "lang": "go",
+    "iconClass": "devicon-go-original-wordmark colored"
+  },
+  {
+    "lang": "graphql",
+    "iconClass": "devicon-graphql-plain colored"
+  },
+  {
+    "lang": "handlebars",
+    "iconClass": "devicon-handlebars-plain colored"
+  },
+  {
+    "lang": "html",
+    "iconClass": "devicon-html5-plain colored"
+  },
+  {
+    "lang": "java",
+    "iconClass": "devicon-java-plain colored"
+  },
+  {
+    "lang": "javascript",
+    "iconClass": "devicon-javascript-plain colored"
+  },
+  {
+    "lang": "julia",
+    "iconClass": "devicon-julia-plain colored"
+  },
+  {
+    "lang": "kotlin",
+    "iconClass": "devicon-kotlin-plain colored"
+  },
+  {
+    "lang": "less",
+    "iconClass": "devicon-less-plain-wordmark colored"
+  },
+  {
+    "lang": "lua",
+    "iconClass": "devicon-lua-plain-wordmark colored"
+  },
+  {
+    "lang": "markdown",
+    "iconClass": "devicon-markdown-original colored"
+  },
+  {
+    "lang": "mysql",
+    "iconClass": "devicon-mysql-plain colored"
+  },
+  {
+    "lang": "objective-c",
+    "iconClass": "devicon-objectivec-plain colored"
+  },
+  {
+    "lang": "perl",
+    "iconClass": "devicon-perl-plain colored"
+  },
+  {
+    "lang": "php",
+    "iconClass": "devicon-php-plain colored"
+  },
+  {
+    "lang": "python",
+    "iconClass": "devicon-python-plain colored"
+  },
+  {
+    "lang": "r",
+    "iconClass": "devicon-r-original colored"
+  },
+  {
+    "lang": "ruby",
+    "iconClass": "devicon-ruby-plain colored"
+  },
+  {
+    "lang": "rust",
+    "iconClass": "devicon-rust-plain colored"
+  },
+  {
+    "lang": "scala",
+    "iconClass": "devicon-scala-plain colored"
+  },
+  {
+    "lang": "scss",
+    "iconClass": "devicon-sass-original colored"
+  },
+  {
+    "lang": "solidity",
+    "iconClass": "devicon-solidity-plain colored"
+  },
+  {
+    "lang": "swift",
+    "iconClass": "devicon-swift-plain colored"
+  },
+  {
+    "lang": "typescript",
+    "iconClass": "devicon-typescript-plain colored"
+  }
+]
