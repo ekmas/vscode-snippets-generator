@@ -12,3 +12,19 @@ body {
   background-color: #2c2c32;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+i {
+  font-size: 40px;
+}
+
+.languages-modal::-webkit-scrollbar{
+  width: 8px;
+}
+
+.languages-modal::-webkit-scrollbar-track{
+  background: #2c2c32;
+}
+
+.languages-modal::-webkit-scrollbar-thumb{
+  background-color: #ffffff;
+}

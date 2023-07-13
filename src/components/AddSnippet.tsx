@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react'
 import SnippetProperty from './SnippetProperty'
 import { Editor } from '@monaco-editor/react'
+import ChangeLanguage from './ChangeLanguage'
 
 export default function AddSnippet() {
   const [snippet, setSnippet] = useState({
@@ -9,6 +10,8 @@ export default function AddSnippet() {
     description: '',
     snippet: '',
   })
+
+  const [language, setLanguage] = useState('Global')
 
   const updateSnippetProperty = useCallback(
     (propertyName: string, value: string) => {
@@ -45,8 +48,8 @@ export default function AddSnippet() {
       <div className="h-[300px] mt-3">
         <Editor
           height="100%"
-          defaultLanguage="javascript"
           theme="vs-dark"
+          language={language}
           options={{
             minimap: {
               enabled: false,
@@ -57,6 +60,8 @@ export default function AddSnippet() {
           }
         />
       </div>
+
+      <ChangeLanguage language={language} setLanguage={setLanguage} />
     </div>
   )
 }
