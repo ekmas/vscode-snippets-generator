@@ -14,10 +14,10 @@ export default function AddSnippet({ setSnippets }: Props) {
     name: '',
     tabTrigger: '',
     description: '',
-    snippet: '',
+    snippet: '// your snippet',
   })
 
-  const [language, setLanguage] = useState('Global')
+  const [language, setLanguage] = useState('unset')
 
   const updateSnippetProperty = useCallback(
     (propertyName: string, value: string) => {
@@ -29,47 +29,63 @@ export default function AddSnippet({ setSnippets }: Props) {
     []
   )
 
+  const addSnippet = (e: React.SyntheticEvent) => {
+    e.preventDefault()
+
+    setSnippets((prevSnippets) => [...prevSnippets, snippet])
+
+    setSnippet({
+      name: '',
+      tabTrigger: '',
+      description: '',
+      snippet: '',
+    })
+  }
+
   return (
     <div>
-      <div className="grid grid-cols-[1fr_1fr] gap-3 mb-3">
+      <form onSubmit={addSnippet}>
+        <div className="grid grid-cols-[1fr_1fr] gap-3 mb-3">
+          <SnippetProperty
+            name="Name"
+            propertyName="name"
+            updateValue={updateSnippetProperty}
+            value={snippet.name}
+          />
+          <SnippetProperty
+            name="Tab trigger"
+            propertyName="tabTrigger"
+            updateValue={updateSnippetProperty}
+            value={snippet.tabTrigger}
+          />
+        </div>
         <SnippetProperty
-          name="Name"
-          propertyName="name"
+          name="Description"
+          propertyName="description"
           updateValue={updateSnippetProperty}
-          value={snippet.name}
+          value={snippet.description}
         />
-        <SnippetProperty
-          name="Tab trigger"
-          propertyName="tabTrigger"
-          updateValue={updateSnippetProperty}
-          value={snippet.tabTrigger}
-        />
-      </div>
-      <SnippetProperty
-        name="Description"
-        propertyName="description"
-        updateValue={updateSnippetProperty}
-        value={snippet.description}
-      />
-      <div className="h-[300px] mt-3">
-        <Editor
-          height="100%"
-          theme="vs-dark"
-          language={language}
-          options={{
-            minimap: {
-              enabled: false,
-            },
-          }}
-          onChange={(value) =>
-            updateSnippetProperty('snippet', value as string)
-          }
-        />
-      </div>
+        <div className="h-[300px] mt-3">
+          <Editor
+            height="100%"
+            theme="vs-dark"
+            language={language}
+            value={snippet.snippet}
+            options={{
+              minimap: {
+                enabled: false,
+              },
+            }}
+            onChange={(value) =>
+              updateSnippetProperty('snippet', value as string)
+            }
+          />
+        </div>
 
-      <ChangeLanguage language={language} setLanguage={setLanguage} />
+        <ChangeLanguage language={language} setLanguage={setLanguage} />
 
-      <AddBtn snippet={snippet} setSnippets={setSnippets} />
+        <AddBtn />
+      </form>
     </div>
   )
 }
