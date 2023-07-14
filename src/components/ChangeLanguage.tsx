@@ -16,6 +16,7 @@ export default function ChangeLanguage({ language, setLanguage }: Props) {
         <p className="text-white font-medium">Language:</p>
 
         <button
+          type="button"
           onClick={() => {
             setIsModalActive(true)
           }}

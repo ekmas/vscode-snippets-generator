@@ -20,6 +20,7 @@ export default function Language({
       <h4 className="font-semibold text-xl my-3">{thisLang}</h4>
 
       <button
+        type="button"
         disabled={isSelected}
         className={
           isSelected

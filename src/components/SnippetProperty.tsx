@@ -20,6 +20,7 @@ export default function SnippetProperty({
     <input
       className="w-full outline-0 p-3 bg-editorBg text-white"
       type="text"
+      required
       placeholder={name}
       name={name}
       value={value}

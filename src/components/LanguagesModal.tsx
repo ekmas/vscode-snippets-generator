@@ -18,8 +18,8 @@ export default function LanguagesModal({
     <div
       className={
         active
-          ? 'fixed top-0 left-0 w-screen h-full flex items-center justify-center backdrop-blur-sm transition-all opacity-100 visible'
-          : 'fixed top-0 left-0 w-screen h-full flex items-center justify-center transition-all opacity-0 invisible'
+          ? 'z-20 fixed top-0 left-0 w-screen h-full flex items-center justify-center backdrop-blur-sm transition-all opacity-100 visible'
+          : 'z-20 fixed top-0 left-0 w-screen h-full flex items-center justify-center transition-all opacity-0 invisible'
       }
     >
       <div className="w-[500px] h-min bg-editorBg text-center p-5 text-white border border-white/50">
@@ -40,6 +40,7 @@ export default function LanguagesModal({
         </div>
         <div className="pt-5">
           <button
+            type="button"
             onClick={() => {
               setIsActive(false)
             }}
