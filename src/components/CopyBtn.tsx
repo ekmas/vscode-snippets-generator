@@ -16,7 +16,7 @@ export default function CopyBtn({ noSnippetsYet, editorValue }: Props) {
     navigator.clipboard
       .writeText(editorValue)
       .then(() => {
-        setIsCopySuccessful(false)
+        setIsCopySuccessful(true)
       })
       .catch((error) => {
         setIsCopySuccessful(false)
