@@ -2,9 +2,14 @@ import { useState, useCallback } from 'react'
 import SnippetProperty from './SnippetProperty'
 import { Editor } from '@monaco-editor/react'
 import ChangeLanguage from './ChangeLanguage'
-import { Snippet } from '../types'
+import { Snippet, SetSnippets } from '../types'
+import AddBtn from './AddBtn'
 
-export default function AddSnippet() {
+type Props = {
+  setSnippets: SetSnippets
+}
+
+export default function AddSnippet({ setSnippets }: Props) {
   const [snippet, setSnippet] = useState<Snippet>({
     name: '',
     tabTrigger: '',
@@ -63,6 +68,8 @@ export default function AddSnippet() {
       </div>
 
       <ChangeLanguage language={language} setLanguage={setLanguage} />
+
+      <AddBtn snippet={snippet} setSnippets={setSnippets} />
     </div>
   )
 }

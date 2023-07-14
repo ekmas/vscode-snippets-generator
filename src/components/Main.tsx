@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AddSnippet from './AddSnippet'
 import { Snippet } from '../types'
 
@@ -7,7 +7,7 @@ export default function Main() {
 
   return (
     <div className="w-[1300px] mx-auto gap-10 px-5 grid grid-cols-2">
-      <AddSnippet />
+      <AddSnippet setSnippets={setSnippets} />
     </div>
   )
 }

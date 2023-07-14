@@ -4,3 +4,5 @@ export type Snippet = {
   description: string
   snippet: string
 }
+
+export type SetSnippets = React.Dispatch<React.SetStateAction<Snippet[]>>
