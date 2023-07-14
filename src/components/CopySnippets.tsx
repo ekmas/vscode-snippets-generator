@@ -44,7 +44,7 @@ ${snippets
   const editorValue = noSnippetsYet ? noSnippetsMessage : snippetsValue
 
   return (
-    <div>
+    <div className="h-[548px]">
       <Editor
         theme="vs-dark"
         language={'json'}
