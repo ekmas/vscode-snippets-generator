@@ -1,5 +1,6 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
+import Loading from './components/Loading'
 import Main from './components/Main'
 
 export default function App() {
@@ -8,6 +9,8 @@ export default function App() {
       <Header />
       <Main />
       <Footer />
+
+      <Loading />
     </>
   )
 }
