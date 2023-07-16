@@ -37,14 +37,16 @@ ${snippets
   .join(',\n')}
 }`
   const noSnippetsMessage = `{
-  "msg": "when you add snippets, they will appear here"    
+  "msg1": "when you add snippets",
+  "msg2": "they will appear here"
 }`
+
   const noSnippetsYet = snippets.length === 0
 
   const editorValue = noSnippetsYet ? noSnippetsMessage : snippetsValue
 
   return (
-    <div className="h-[548px]">
+    <div className="h-[548px] w900:h-[352px] w550:h-[252px] w400:h-[202px]">
       <Editor
         theme="vs-dark"
         language={'json'}

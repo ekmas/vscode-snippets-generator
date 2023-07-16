@@ -13,6 +13,26 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body::-webkit-scrollbar{
+  width: 16px;
+}
+
+body::-webkit-scrollbar-track{
+  background: #1e1e1e;
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #4f4f4f;
+}
+
+body:hover::-webkit-scrollbar-thumb{
+  background-color: #424242;
+}
+
+body::-webkit-scrollbar-thumb:active{
+  background-color: #5e5e5e;
+}
+
 i {
   font-size: 40px;
 }
@@ -26,5 +46,5 @@ i {
 }
 
 .languages-modal::-webkit-scrollbar-thumb{
-  background-color: #ffffff;
+  background-color: #808080;
 }

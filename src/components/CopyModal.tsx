@@ -17,21 +17,21 @@ export default function CopyModal({
           : 'z-20 fixed top-0 left-0 w-screen h-full flex items-center justify-center transition-all opacity-0 invisible'
       }
     >
-      <div className="w-[550px] h-min bg-editorBg text-center p-5 text-white border border-white/50">
-        <h2 className="text-2xl">
+      <div className="w-[550px] mx-5 h-min bg-editorBg text-center p-5 text-white border border-white/50">
+        <h2 className="text-2xl w550:text-xl w450:text-lg w400:text-base">
           {isCopySuccesful
             ? 'Snippets have been copied.'
             : "Your device doesn't support navigator api."}
         </h2>
 
         {!isCopySuccesful && (
-          <p className="mt-6 leading-[1.8] text-[15px]">
-            You&quot;ll have to click on the editor on the right with snippets,
-            select them all and copy them that way.
+          <p className="mt-6 leading-[1.8] text-[15px] w550:text-[13px] w400:text-[11px]">
+            You&quot;ll have to click on the editor with snippets, select them
+            all and copy them that way.
           </p>
         )}
 
-        <p className="my-6 leading-[1.8] text-[15px]">
+        <p className="my-6 leading-[1.8] text-[15px] w550:text-[13px] w400:text-[11px]">
           Now open VSCode and open command palette with <br />{' '}
           <b>Ctrl + Shift + P</b>. <br /> Search for &quot;Snippets: Configure
           User Snippets&quot; <br />

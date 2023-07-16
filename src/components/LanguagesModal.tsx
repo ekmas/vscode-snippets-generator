@@ -22,10 +22,12 @@ export default function LanguagesModal({
           : 'z-20 fixed top-0 left-0 w-screen h-full flex items-center justify-center transition-all opacity-0 invisible'
       }
     >
-      <div className="w-[500px] h-min bg-editorBg text-center p-5 text-white border border-white/50">
-        <h2 className="text-2xl">Choose language</h2>
+      <div className="w-[500px] mx-5 w550:w-[90%] w400:w-full h-min bg-editorBg text-center p-5 text-white border border-white/50">
+        <h2 className="text-2xl w550:text-xl w450:text-lg w400:text-base">
+          Choose language
+        </h2>
 
-        <div className="grid grid-cols-2 mt-6 overflow-y-scroll  h-[380px] languages-modal">
+        <div className="grid grid-cols-2 w450:grid-cols-1 mt-6 overflow-y-scroll px-5 h-[380px] h600:h-[250px] languages-modal">
           {languages.map((lang) => {
             return (
               <Language

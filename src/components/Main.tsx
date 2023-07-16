@@ -7,8 +7,8 @@ export default function Main() {
   const [snippets, setSnippets] = useState<Snippet[]>([])
 
   return (
-    <div className="w-[1300px] mx-auto min-h-[calc(100vh-225px-112px)] flex flex-col justify-center items-center">
-      <div className="w-full gap-10 px-5 grid grid-cols-2 h-full">
+    <div className="max-w-container w-full mx-auto min-h-[calc(100vh-225px-112px)] flex flex-col justify-center items-center">
+      <div className="w-full gap-10 px-5 grid grid-cols-2 w900:grid-cols-1 w900:w-[90%] w900:mx-auto h-full w400:w-full">
         <AddSnippet setSnippets={setSnippets} />
         <CopySnippets snippets={snippets} />
       </div>

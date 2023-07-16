@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      width: {
+      maxWidth: {
         container: '1300px',
       },
       padding: {
@@ -22,6 +22,15 @@ export default {
         darkGray: '#333333',
         darkerGray: '#242424',
         editorBg: '#1e1e1e'
+      },
+
+      screens: {
+        'h600': { 'raw': '(max-height: 600px)' },
+        
+        'w900': { 'raw': '(max-width: 900px)' },
+        'w550': { 'raw': '(max-width: 550px)' },
+        'w450': { 'raw': '(max-width: 450px)' },
+        'w400': { 'raw': '(max-width: 400px)' },
       }
     },
   },

@@ -45,7 +45,7 @@ export default function AddSnippet({ setSnippets }: Props) {
   return (
     <div>
       <form onSubmit={addSnippet}>
-        <div className="grid grid-cols-[1fr_1fr] gap-3 mb-3">
+        <div className="grid grid-cols-[1fr_1fr] w550:grid-cols-1 gap-3 mb-3">
           <SnippetProperty
             name="Name"
             propertyName="name"
@@ -65,7 +65,7 @@ export default function AddSnippet({ setSnippets }: Props) {
           updateValue={updateSnippetProperty}
           value={snippet.description}
         />
-        <div className="h-[300px] mt-3">
+        <div className="h-[300px] w550:h-[200px] w400:h-[150px] mt-3">
           <Editor
             height="100%"
             theme="vs-dark"
