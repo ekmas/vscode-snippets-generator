@@ -56,6 +56,7 @@ ${snippets
           minimap: {
             enabled: false,
           },
+          readOnly: true,
         }}
       />
 
