@@ -3,7 +3,7 @@ import SnippetProperty from './SnippetProperty'
 import { Editor } from '@monaco-editor/react'
 import ChangeLanguage from './ChangeLanguage'
 import { Snippet, SetSnippets } from '../types'
-import AddBtn from './AddBtn'
+import { Button } from './Button'
 
 type Props = {
   setSnippets: SetSnippets
@@ -84,7 +84,9 @@ export default function AddSnippet({ setSnippets }: Props) {
 
         <ChangeLanguage language={language} setLanguage={setLanguage} />
 
-        <AddBtn />
+        <Button type="submit" className="py-2 w-full mt-3 text-white">
+          Add new snippet
+        </Button>
       </form>
     </div>
   )

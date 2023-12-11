@@ -1,3 +1,5 @@
+import { Button } from './Button'
+
 type Props = {
   active: boolean
   setIsActive: (active: boolean) => void
@@ -42,15 +44,15 @@ export default function CopyModal({
           snippets.
         </p>
 
-        <button
+        <Button
           type="button"
           onClick={() => {
             setIsActive(false)
           }}
-          className="bg-primaryBlue hover:bg-secondaryBlue transition-colors px-5 py-1.5"
+          className="py-1.5"
         >
           Ok
-        </button>
+        </Button>
       </div>
     </div>
   )

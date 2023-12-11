@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import LanguagesModal from './LanguagesModal'
+import { Button } from './Button'
 
 type Props = {
   language: string
@@ -15,7 +16,7 @@ export default function ChangeLanguage({ language, setLanguage }: Props) {
       <div className="flex items-center justify-between mt-3 bg-editorBg p-3">
         <p className="text-white font-medium">Language:</p>
 
-        <button
+        <Button
           type="button"
           onClick={() => {
             setIsModalActive(true)
@@ -24,7 +25,7 @@ export default function ChangeLanguage({ language, setLanguage }: Props) {
         >
           {language}
           <BsChevronDown className="ml-3" />
-        </button>
+        </Button>
       </div>
       <LanguagesModal
         language={language}
