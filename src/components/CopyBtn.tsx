@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import CopyModal from './CopyModal'
+import clsx from 'clsx'
+import { Button } from './Button'
 
 type Props = {
   noSnippetsYet: boolean
@@ -27,17 +29,18 @@ export default function CopyBtn({ noSnippetsYet, editorValue }: Props) {
 
   return (
     <>
-      <button
+      <Button
         onClick={handleCopySnippets}
         disabled={noSnippetsYet}
-        className={
+        className={clsx(
+          'transition-all mt-3 text-white w-full px-5 py-2',
           noSnippetsYet
-            ? 'bg-gray cursor-not-allowed transition-all mt-3 text-white w-full px-5 py-2'
-            : 'bg-primaryBlue transition-all mt-3 text-white w-full hover:bg-secondaryBlue px-5 py-2'
-        }
+            ? 'bg-gray hover:bg-gray cursor-not-allowed'
+            : 'bg-primaryBlue hover:bg-secondaryBlue'
+        )}
       >
         Copy snippets
-      </button>
+      </Button>
       <CopyModal
         active={isModalActive}
         setIsActive={setIsModalActive}
