@@ -1,4 +1,5 @@
 import languages from '../languages.json'
+import { Button } from './Button'
 import Language from './Language'
 
 type Props = {
@@ -41,15 +42,15 @@ export default function LanguagesModal({
           })}
         </div>
         <div className="pt-5">
-          <button
+          <Button
             type="button"
             onClick={() => {
               setIsActive(false)
             }}
-            className="bg-primaryBlue hover:bg-secondaryBlue transition-colors px-5 py-1.5"
+            className="py-1.5"
           >
             Ok
-          </button>
+          </Button>
         </div>
       </div>
     </div>

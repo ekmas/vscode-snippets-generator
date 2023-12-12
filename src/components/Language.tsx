@@ -1,3 +1,6 @@
+import clsx from 'clsx'
+import { Button } from './Button'
+
 type Props = {
   activeLanguage: string
   thisLang: string
@@ -19,20 +22,20 @@ export default function Language({
 
       <h4 className="font-semibold text-xl w450:text-lg my-3">{thisLang}</h4>
 
-      <button
+      <Button
         type="button"
         disabled={isSelected}
-        className={
-          isSelected
-            ? 'bg-gray cursor-not-allowed transition-all px-5 py-1.5 w450:text-sm w450:px-4 w450:py-1'
-            : 'bg-primaryBlue transition-all hover:bg-secondaryBlue px-5 py-1.5 w450:text-sm w450:px-4 w450:py-1'
-        }
+        className={clsx(
+          'w450:text-sm w450:px-4 w450:py-1 py-1.5' && isSelected
+            ? 'bg-gray hover:bg-gray cursor-not-allowed'
+            : ''
+        )}
         onClick={() => {
           setLanguage(thisLang)
         }}
       >
         {isSelected ? 'Selected' : 'Select'}
-      </button>
+      </Button>
     </div>
   )
 }
