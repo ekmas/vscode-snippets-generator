@@ -1,8 +1,20 @@
-import { Editor } from '@monaco-editor/react'
-import { Snippet } from '../types'
+import type { Snippet } from '../types'
 import CopyBtn from './CopyBtn'
+import SnippetItem from './SnippetItem'
 
-export default function CopySnippets({ snippets }: { snippets: Snippet[] }) {
+type Props = {
+  snippets: Snippet[]
+  setActiveSnippet: React.Dispatch<React.SetStateAction<Snippet | null>>
+  setSnippets: React.Dispatch<React.SetStateAction<Snippet[]>>
+  isEditing: boolean
+}
+
+export default function CopySnippets({
+  snippets,
+  setSnippets,
+  setActiveSnippet,
+  isEditing,
+}: Props) {
   const snippetsValue = `{
 ${snippets
   .map((snippet) => {
@@ -36,29 +48,34 @@ ${snippets
   })
   .join(',\n')}
 }`
-  const noSnippetsMessage = `{
-  "msg1": "when you add snippets",
-  "msg2": "they will appear here"
-}`
 
   const noSnippetsYet = snippets.length === 0
 
-  const editorValue = noSnippetsYet ? noSnippetsMessage : snippetsValue
-
   return (
     <div className="h-[548px] w900:h-[352px] w550:h-[252px] w400:h-[202px]">
-      <Editor
-        theme="vs-dark"
-        language={'json'}
-        height={'calc(100% - 52px)'}
-        value={editorValue}
-        options={{
-          minimap: {
-            enabled: false,
-          },
-          readOnly: true,
-        }}
-      />
+      <div className="h-[calc(100%-52px)] p-5 bg-editorBg">
+        {noSnippetsYet ? (
+          <div className="text-white h-full flex items-center justify-center">
+            When you add snippets, they will appear here.
+          </div>
+        ) : (
+          <div className="overflow-y-auto pr-4 w450:pr-0 thin-scrollbar h-full">
+            {snippets.map((snippet, index) => {
+              return (
+                <SnippetItem
+                  key={index}
+                  index={index}
+                  setActiveSnippet={setActiveSnippet}
+                  setSnippets={setSnippets}
+                  snippet={snippet}
+                  snippets={snippets}
+                  isEditing={isEditing}
+                />
+              )
+            })}
+          </div>
+        )}
+      </div>
 
       <CopyBtn noSnippetsYet={noSnippetsYet} editorValue={snippetsValue} />
     </div>
