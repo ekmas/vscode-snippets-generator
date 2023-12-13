@@ -21,7 +21,9 @@ export default {
         gray: '#6e6e6e',
         darkGray: '#333333',
         darkerGray: '#242424',
-        editorBg: '#1e1e1e'
+        editorBg: '#1e1e1e',
+        primaryRed: '#b80000',
+        secondaryRed: '#a30000',
       },
 
       screens: {
