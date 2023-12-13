@@ -28,7 +28,7 @@ export default function LanguagesModal({
           Choose language
         </h2>
 
-        <div className="grid grid-cols-2 w450:grid-cols-1 mt-6 overflow-y-scroll px-5 h-[380px] h600:h-[250px] languages-modal">
+        <div className="grid grid-cols-2 w450:grid-cols-1 mt-6 overflow-y-scroll px-5 h-[380px] h600:h-[250px] thin-scrollbar">
           {languages.map((lang) => {
             return (
               <Language

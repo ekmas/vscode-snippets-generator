@@ -45,6 +45,7 @@ export default function CopyBtn({ noSnippetsYet, editorValue }: Props) {
         active={isModalActive}
         setIsActive={setIsModalActive}
         isCopySuccesful={isCopySuccessful}
+        editorValue={editorValue}
       />
     </>
   )

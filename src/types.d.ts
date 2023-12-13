@@ -3,6 +3,5 @@ export type Snippet = {
   tabTrigger: string
   description: string
   snippet: string
+  uuid: string
 }
-
-export type SetSnippets = React.Dispatch<React.SetStateAction<Snippet[]>>

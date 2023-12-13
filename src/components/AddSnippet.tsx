@@ -1,21 +1,45 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import SnippetProperty from './SnippetProperty'
 import { Editor } from '@monaco-editor/react'
 import ChangeLanguage from './ChangeLanguage'
-import { Snippet, SetSnippets } from '../types'
+import { Snippet } from '../types'
 import { Button } from './Button'
+import clsx from 'clsx'
 
 type Props = {
-  setSnippets: SetSnippets
+  setSnippets: React.Dispatch<React.SetStateAction<Snippet[]>>
+  setActiveSnippet: React.Dispatch<React.SetStateAction<Snippet | null>>
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>
+  activeSnippet: Snippet | null
+  snippets: Snippet[]
+  isEditing: boolean
 }
 
-export default function AddSnippet({ setSnippets }: Props) {
+export default function AddSnippet({
+  setSnippets,
+  activeSnippet,
+  setActiveSnippet,
+  snippets,
+  isEditing,
+  setIsEditing,
+}: Props) {
   const [snippet, setSnippet] = useState<Snippet>({
     name: '',
     tabTrigger: '',
     description: '',
-    snippet: '// your snippet',
+    snippet: '',
+    uuid: crypto.randomUUID(),
   })
+
+  useEffect(() => {
+    if (activeSnippet) {
+      setSnippet(activeSnippet)
+
+      if (activeSnippet.name && activeSnippet.tabTrigger) {
+        setIsEditing(true)
+      }
+    }
+  }, [activeSnippet])
 
   const [language, setLanguage] = useState('unset')
 
@@ -32,13 +56,44 @@ export default function AddSnippet({ setSnippets }: Props) {
   const addSnippet = (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    setSnippets((prevSnippets) => [...prevSnippets, snippet])
+    if (isEditing) {
+      const snippetsCopy = [...snippets]
+      const oldSnippet = snippetsCopy.find(
+        (x) => x.uuid === activeSnippet?.uuid
+      )
+
+      const oldSnippetIndex = snippetsCopy.findIndex(
+        (x) => x.uuid === oldSnippet?.uuid
+      )
+
+      snippetsCopy[oldSnippetIndex] = snippet
+      setSnippets(snippetsCopy)
+
+      setActiveSnippet(null)
+      setIsEditing(false)
+    } else {
+      setSnippets((prevSnippets) => [...prevSnippets, snippet])
+    }
 
     setSnippet({
       name: '',
       tabTrigger: '',
       description: '',
       snippet: '',
+      uuid: crypto.randomUUID(),
+    })
+  }
+
+  const cancelEditing = () => {
+    setActiveSnippet(null)
+    setIsEditing(false)
+
+    setSnippet({
+      name: '',
+      tabTrigger: '',
+      description: '',
+      snippet: '',
+      uuid: crypto.randomUUID(),
     })
   }
 
@@ -84,9 +139,25 @@ export default function AddSnippet({ setSnippets }: Props) {
 
         <ChangeLanguage language={language} setLanguage={setLanguage} />
 
-        <Button type="submit" className="py-2 w-full mt-3 text-white">
-          Add new snippet
-        </Button>
+        <div
+          className={clsx(
+            'grid',
+            isEditing ? 'grid-cols-2 gap-3' : 'grid-cols-1'
+          )}
+        >
+          <Button type="submit" className="py-2 w-full mt-3 text-white">
+            {isEditing ? 'Save' : 'Add new snippet'}
+          </Button>
+          {isEditing && (
+            <Button
+              onClick={cancelEditing}
+              type="button"
+              className="py-2 w-full mt-3 text-white bg-primaryRed hover:bg-secondaryRed"
+            >
+              Cancel
+            </Button>
+          )}
+        </div>
       </form>
     </div>
   )
