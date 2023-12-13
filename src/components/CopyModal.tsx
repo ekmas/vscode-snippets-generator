@@ -1,15 +1,18 @@
+import { Editor } from '@monaco-editor/react'
 import { Button } from './Button'
 
 type Props = {
   active: boolean
   setIsActive: (active: boolean) => void
   isCopySuccesful: boolean | null
+  editorValue: string
 }
 
 export default function CopyModal({
   active,
   setIsActive,
   isCopySuccesful,
+  editorValue,
 }: Props) {
   return (
     <div
@@ -27,10 +30,28 @@ export default function CopyModal({
         </h2>
 
         {!isCopySuccesful && (
-          <p className="mt-6 leading-[1.8] text-[15px] w550:text-[13px] w400:text-[11px]">
-            You&quot;ll have to click on the editor with snippets, select them
-            all and copy them that way.
-          </p>
+          <>
+            <p className="mt-6 leading-[1.8] text-[15px] w550:text-[13px] w400:text-[11px]">
+              You&quot;ll have to click on the editor with snippets, select them
+              all and copy them that way.
+            </p>
+
+            <div className="border mt-4 w-5/6 mx-auto border-white/50">
+              <Editor
+                theme="vs-dark"
+                language={'json'}
+                height={'150px'}
+                value={editorValue}
+                options={{
+                  minimap: {
+                    enabled: false,
+                  },
+                  readOnly: true,
+                  fontSize: 12,
+                }}
+              />
+            </div>
+          </>
         )}
 
         <p className="my-6 leading-[1.8] text-[15px] w550:text-[13px] w400:text-[11px]">
