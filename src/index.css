@@ -13,23 +13,23 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   width: 16px;
 }
 
-body::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track {
   background: #1e1e1e;
 }
 
-body::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb {
   background-color: #4f4f4f;
 }
 
-body:hover::-webkit-scrollbar-thumb{
+body:hover::-webkit-scrollbar-thumb {
   background-color: #424242;
 }
 
-body::-webkit-scrollbar-thumb:active{
+body::-webkit-scrollbar-thumb:active {
   background-color: #5e5e5e;
 }
 
@@ -37,14 +37,14 @@ i {
   font-size: 40px;
 }
 
-.languages-modal::-webkit-scrollbar{
+.thin-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 
-.languages-modal::-webkit-scrollbar-track{
+.thin-scrollbar::-webkit-scrollbar-track {
   background: #2c2c32;
 }
 
-.languages-modal::-webkit-scrollbar-thumb{
+.thin-scrollbar::-webkit-scrollbar-thumb {
   background-color: #808080;
 }
